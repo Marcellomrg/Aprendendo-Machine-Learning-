@@ -17,7 +17,7 @@ x = frutas[caracteristicas]
 # Machiche learning
 arvore.fit(x,y)
 # %%
-arvore.predict([[0,0,0,0]])
+arvore.predict([[1,0,0,0]])
 # %%
 plt.figure(dpi=400)
 tree.plot_tree(arvore,feature_names=caracteristicas
