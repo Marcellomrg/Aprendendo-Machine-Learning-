@@ -29,7 +29,7 @@ predict_proba = arvore.predict_proba(X[["cerveja"]].drop_duplicates())[:,1]
 predict_proba
 
 # %%
-plt.figure(dpi=400)
+plt.figure(dpi=200)
 plt.plot(X["cerveja"],y,"o")
 plt.grid(True)
 plt.xlabel("ceverjas")
@@ -39,4 +39,7 @@ plt.plot(X.drop_duplicates()['cerveja'],predict)
 plt.plot(X.drop_duplicates()['cerveja'],predict_proba)
 plt.hlines(0.5,xmin=1,xmax=9,colors="black",linestyles="--")
 plt.legend(["Observados","Arvore predict","Arvore proba"])
+# %%
+plt.figure(figsize=(4,6))
+tree.plot_tree(arvore,feature_names=["cerveja"],class_names= ["Reprovado","Aprovado"],filled=True,max_depth=2)
 # %%
